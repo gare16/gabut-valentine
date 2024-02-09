@@ -1,40 +1,8 @@
-import { useState } from "react";
 import "../index.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 
 export default function EciPage() {
-  const [noCount, setNoCount] = useState(0);
-  const [yesPressed, setYesPressed] = useState(false);
-  const yesButtonSize = noCount * 20 + 16;
-
-  const handleNoClick = () => {
-    setNoCount(noCount + 1);
-  };
-
-  const isYourPicture = () => {
-    const pictures = [
-      "../../public/Images/image1.jpeg",
-      "../../public/Images/image2.jpeg",
-      "../../public/Images/image3.jpeg",
-      "../../public/Images/image4.jpeg",
-      "../../public/Images/image5.jpeg",
-    ];
-    if (pictures.length < noCount) {
-      console.log("true");
-      return pictures[Math.max(noCount, pictures.length + 1)];
-    } else {
-      console.log("false");
-      return pictures[Math.min(noCount, pictures.length - 1)];
-    }
-  };
-
-  const getNoButtonText = () => {
-    const phrases = ["Engga?!", "Yakin nih?", "Yakin banget?"];
-
-    return phrases[Math.min(noCount, phrases.length - 1)].toString();
-  };
-  //   () => setYesPressed(true)
   return (
     <div className="mx-96">
       <section className="section">
